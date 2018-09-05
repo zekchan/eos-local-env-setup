@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 #старт ноды
+rm -rf /root/eosio-wallet
+cp -R /root/eosio-wallet-init /root/eosio-wallet
 /localEnv/indocker/initAccounts.sh & \
 nodeos -e -p eosio \
 --plugin eosio::producer_plugin \
