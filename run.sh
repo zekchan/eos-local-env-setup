@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
-myloc=$(dirname $0)
-echo $myloc
-
 docker run --rm --name eosio -d -p 8888:8888 -p 9876:9876 \
--v $myloc/eosio-wallet:/root/eosio-wallet-init \
--v $myloc:/localEnv \
-eosio/eos-dev \
+-v ~:/work \
+-v `pwd`/eosio-wallet:/root/eosio-wallet-init \
+-v `pwd`:/localEnv \
+eosio/eos-dev:v1.2.4 \
 /localEnv/indocker/startNode.sh
 
 docker attach eosio
