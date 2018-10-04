@@ -14,4 +14,5 @@ nodeos -e -p eosio \
 --http-server-address=0.0.0.0:8888 \
 --access-control-allow-origin=* \
 --contracts-console \
+--filter-on='*' \
 --http-validate-host=false
